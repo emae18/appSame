@@ -1,0 +1,11 @@
+<div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center center" style="height: 90%;">
+    <mat-card routerLink="{{card==='Legajos'?'/legajos':'/login'}}" 
+    routerLinkActive="active" fxFlex="25" fxLayoutAlign="center" style="margin-top: 3%;" 
+    *ngFor="let card of cards" fxFlexOffset="10">
+        <mat-card-header  >
+            <mat-card-title >
+                {{card}}
+            </mat-card-title>
+        </mat-card-header>
+    </mat-card>
+</div>
