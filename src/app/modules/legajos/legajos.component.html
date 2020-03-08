@@ -1,3 +1,34 @@
-<button routerLinkActive="active" routerLink="/main">
-    hola
-</button>
+
+<div style="height: auto;">
+    <div style="margin-top: 2.5%;" fxLayout="row" fxLayout.xs="column" fxLayoutGap.xs="1px" fxLayoutAlign="center center" fxLayoutGap="11px">
+        <mat-icon  >
+            help
+        </mat-icon>
+        <mat-label  >
+            Buscar
+        </mat-label>
+        <form style="display: inline-block;" fxLayout.xs="column" fxFlex="80" fxLayoutGap="5px">
+            <mat-form-field fxFlex="80" appearance="outline">
+                <mat-label>
+                    Busqueda por Apellido, Nombre
+                </mat-label>
+                <input fxFlex    matInput placeholder="Apellido, Nombre, DNI, CUIL, N° Legajo" >
+                <mat-icon >
+                    search
+                </mat-icon>
+            </mat-form-field>
+            <mat-form-field fxFlex appearance="outline">
+                <mat-label>Desde</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field fxFlex appearance="outline">
+                <mat-label>Hasta</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </form>
+    </div>
+</div>

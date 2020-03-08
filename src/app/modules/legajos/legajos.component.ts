@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./legajos.component.css']
 })
 export class LegajosComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {
