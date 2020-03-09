@@ -8,6 +8,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatTableModule } from '@angular/material/table';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [],
@@ -20,7 +26,13 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatInputModule,
     MatCheckboxModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTooltipModule,
+    MatGridListModule,
+    MatAutocompleteModule,
+    MatTableModule,
+    MatProgressSpinnerModule,
+    MatPaginatorModule
   ],
   exports: [
     MatButtonModule,
@@ -30,7 +42,13 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatInputModule,
     MatCheckboxModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTooltipModule,
+    MatGridListModule,
+    MatAutocompleteModule,
+    MatTableModule,
+    MatProgressSpinnerModule,
+    MatPaginatorModule
   ],
 })
 export class MaterialModule { }
