@@ -9,6 +9,9 @@ import {MatTableDataSource} from '@angular/material/table';
   styleUrls: ['./legajos.component.css']
 })
 export class LegajosComponent implements OnInit {
+  public lag(){
+    console.log('lag');
+  }
   help_tooltip:string;
   options: string[] = ['R6-07 dir prov Same 107', '...', '...'];
   operadores: string[] = ['Daniel', 'Emanuel', 'Andres'];

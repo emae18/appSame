@@ -1,7 +1,7 @@
 
 <div style="height: auto;">
     <div style="margin-top: 2.5%;" fxLayout="row" fxLayout.xs="column" fxLayoutGap.xs="1px" fxLayoutAlign="center center" fxLayoutGap="11px">
-        <mat-icon matTooltip="{{help_tooltip}}">
+        <mat-icon  >
             help
         </mat-icon>
         <mat-label  >
@@ -30,127 +30,5 @@
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
         </form>
-    </div>
-
-    <!-- Body -->
-    <div style="margin-top: 2.5%;" fxLayout="row" fxLayout.xs="column" fxLayoutGap.xs="1px" fxLayoutAlign="center center" fxLayoutGap="11px">
-      <form style="display: inline-block;" fxLayout.xs="column" fxFlex="10" fxLayoutGap="5px">
-        <span  fxLayoutAlign="center center">Legajo</span>
-        <hr width="100%">
-        <mat-checkbox>Todos</mat-checkbox>
-        <br>
-        <mat-checkbox>Activo</mat-checkbox>
-        <br>
-        <mat-checkbox>Inactivo</mat-checkbox>
-        <br>
-      </form>
-
-      <button mat-raised-button [ngStyle]="{'width':'200px'}" >Agregar Nuevo</button>
-      <br>
-      <button mat-raised-button [ngStyle]="{'width':'150px'}">Imprimir xls</button>
-      <br>
-      <button mat-raised-button [ngStyle]="{'width':'150px'}">Imprimir pdf</button>
-      <br>
-
-      <form style="display: inline-block;"  fxLayout.xs="column" fxFlex="20" fxLayoutGap="20px">
-              <mat-form-field [ngStyle]="{'width':'300px'}" appearance="outline">
-                <input type="text"
-                       placeholder="Lugar de trabajo"
-                       aria-label="Number"
-                       matInput
-                       [matAutocomplete]="auto">
-                <mat-autocomplete #auto="matAutocomplete" >
-                  <mat-option *ngFor="let option of options" [value]="option">
-                    {{option}}
-                  </mat-option>
-                </mat-autocomplete>
-              </mat-form-field>
-      </form>
-      <br>
-      <form style="display: inline-block;"  fxLayout.xs="column" fxFlex="20" fxLayoutGap="20px">
-              <mat-form-field [ngStyle]="{'width':'300px'}" appearance="outline">
-                <input type="text"
-                       placeholder="Operador de carga"
-                       aria-label="Number"
-                       matInput
-                       [matAutocomplete]="auto_operador">
-                <mat-autocomplete #auto_operador="matAutocomplete">
-                  <mat-option *ngFor="let operador of operadores" [value]="operador">
-                    {{operador}}
-                  </mat-option>
-                </mat-autocomplete>
-              </mat-form-field>
-      </form>
-    </div>
-    <br>
-    <!-- Table -->
-    <div style="margin-top: 2.5%;" fxLayout="row" fxLayout.xs="column" fxLayoutGap.xs="1px" fxLayoutAlign="center center" fxLayoutGap="11px">
-      <div class="example-container mat-elevation-z8">
-        <table mat-table [dataSource]="dataSource">
-
-          <!-- Legajo Column -->
-          <ng-container matColumnDef="legajo">
-            <th mat-header-cell *matHeaderCellDef> Legajo </th>
-            <td mat-cell *matCellDef="let element"> {{element.legajo}} </td>
-          </ng-container>
-
-          <!-- NombreCOmpleto Column -->
-          <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef> Nombre completo </th>
-            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-          </ng-container>
-
-          <!-- Documento Column -->
-          <ng-container matColumnDef="documento">
-            <th mat-header-cell *matHeaderCellDef> Documento </th>
-            <td mat-cell *matCellDef="let element"> {{element.documento}} </td>
-          </ng-container>
-
-          <!-- Entidad Salud Column -->
-          <ng-container matColumnDef="entidadsalud">
-            <th mat-header-cell *matHeaderCellDef> Entidad Salud </th>
-            <td mat-cell *matCellDef="let element"> {{element.entidadsalud}} </td>
-          </ng-container>
-
-          <!-- LugarDeTrabajo Salud Column -->
-          <ng-container matColumnDef="lugartrabajo">
-            <th mat-header-cell *matHeaderCellDef> Lugar de Trabajo </th>
-            <td mat-cell *matCellDef="let element"> {{element.lugartrabajo}} </td>
-          </ng-container>
-
-          <!-- SituacionRevista Salud Column -->
-          <ng-container matColumnDef="situacionrevista">
-            <th mat-header-cell *matHeaderCellDef> Situacion Revista </th>
-            <td mat-cell *matCellDef="let element"> {{element.situacionrevista}} </td>
-          </ng-container>
-
-          <!-- Categoria Salud Column -->
-          <ng-container matColumnDef="categoria">
-            <th mat-header-cell *matHeaderCellDef> Categoria </th>
-            <td mat-cell *matCellDef="let element"> {{element.categoria}} </td>
-          </ng-container>
-
-          <!-- UdoPresup Salud Column -->
-          <ng-container matColumnDef="udopresup">
-            <th mat-header-cell *matHeaderCellDef> Udo Presup </th>
-            <td mat-cell *matCellDef="let element"> {{element.udopresup}} </td>
-          </ng-container>
-
-          <!-- Fecha Nacimiento Salud Column -->
-          <ng-container matColumnDef="fechanacimiento">
-            <th mat-header-cell *matHeaderCellDef> Fecha Nacimiento </th>
-            <td mat-cell *matCellDef="let element"> {{element.fechanacimiento}} </td>
-          </ng-container>
-
-          <!-- Sexo Salud Column -->
-          <ng-container matColumnDef="sexo">
-            <th mat-header-cell *matHeaderCellDef> Sexo </th>
-            <td mat-cell *matCellDef="let element"> {{element.sexo}} </td>
-          </ng-container>
-
-          <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-      </div>
     </div>
 </div>
