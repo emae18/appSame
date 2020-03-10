@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatTableDataSource} from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-legajos',
@@ -13,9 +13,9 @@ export class LegajosComponent implements OnInit {
   options: string[] = ['R6-07 dir prov Same 107', '...', '...'];
   operadores: string[] = ['Daniel', 'Emanuel', 'Andres'];
   //displayedColumns = ['legajo', 'name', 'documento', 'entidadsalud', 'lugartrabajo', 'situacionrevista', 'categoria', 'udopresup', 'fechanacimiento', 'sexo'];
-  displayedColumns = ['legajo', 'name', 'documento', 'entidadsalud',
-   'lugartrabajo', 'situacionrevista', 'categoria', 'udopresup',
-   'fechanacimiento','sexo'];
+  displayedColumns = ['legajo', 'apellido', 'nombre', 'cuil',
+   'situacionrevista', 'udeo', 'categoria', 'lugartrabajo',
+   'fechaingreso', 'estado', 'funcion', 'agrupamiento'];
   dataSource = ELEMENT_DATA;
 
   constructor() {
@@ -29,46 +29,60 @@ export class LegajosComponent implements OnInit {
   }
 }
 
-export interface PeriodicElement {
-  legajo: number;
-  name: string;
-  documento: number;
-  entidadsalud: string;
-  lugartrabajo: string;
-  situacionrevista: string;
-  categoria: number;
-  udopresup: string;
-  fechanacimiento: string;
-  sexo: string;
+export interface Legajos {
+  legajo:number;
+  apellido:string;
+  nombre:string;
+  cuil:number;
+  situacionrevista:string;
+  udeo:string;
+  categoria:string;
+  lugartrabajo:string;
+  fechaingreso:string;
+  estado:string;
+  funcion:string;
+  agrupamiento:string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {legajo:12334, name:"Emanuel Jara", documento:39989456, entidadsalud:"Ninguna",
-  lugartrabajo:"R6-07 dir prov Same 107", situacionrevista:"Planta permanente M.Salud",
-  categoria:1, udopresup:"6-07", fechanacimiento:"05/12/1996", sexo:'M'},
-  {legajo:12334, name:"Emanuel Jara", documento:39989456, entidadsalud:"Ninguna",
-  lugartrabajo:"R6-07 dir prov Same 107", situacionrevista:"Planta permanente M.Salud",
-  categoria:1, udopresup:"6-07", fechanacimiento:"05/12/1996", sexo:'M'},
-  {legajo:12334, name:"Emanuel Jara", documento:39989456, entidadsalud:"Ninguna",
-  lugartrabajo:"R6-07 dir prov Same 107", situacionrevista:"Planta permanente M.Salud",
-  categoria:1, udopresup:"6-07", fechanacimiento:"05/12/1996", sexo:'M'},
-  {legajo:12334, name:"Emanuel Jara", documento:39989456, entidadsalud:"Ninguna",
-  lugartrabajo:"R6-07 dir prov Same 107", situacionrevista:"Planta permanente M.Salud",
-  categoria:1, udopresup:"6-07", fechanacimiento:"05/12/1996", sexo:'M'},
-  {legajo:12334, name:"Emanuel Jara", documento:39989456, entidadsalud:"Ninguna",
-  lugartrabajo:"R6-07 dir prov Same 107", situacionrevista:"Planta permanente M.Salud",
-  categoria:1, udopresup:"6-07", fechanacimiento:"05/12/1996", sexo:'M'},
-  {legajo:12334, name:"Emanuel Jara", documento:39989456, entidadsalud:"Ninguna",
-  lugartrabajo:"R6-07 dir prov Same 107", situacionrevista:"Planta permanente M.Salud",
-  categoria:1, udopresup:"6-07", fechanacimiento:"05/12/1996", sexo:'M'},
-  {legajo:12334, name:"Emanuel Jara", documento:39989456, entidadsalud:"Ninguna",
-  lugartrabajo:"R6-07 dir prov Same 107", situacionrevista:"Planta permanente M.Salud",
-  categoria:1, udopresup:"6-07", fechanacimiento:"05/12/1996", sexo:'M'},
-  {legajo:12334, name:"Emanuel Jara", documento:39989456, entidadsalud:"Ninguna",
-  lugartrabajo:"R6-07 dir prov Same 107", situacionrevista:"Planta permanente M.Salud",
-  categoria:1, udopresup:"6-07", fechanacimiento:"05/12/1996", sexo:'M'},
-  {legajo:12334, name:"Emanuel Jara", documento:39989456, entidadsalud:"Ninguna",
-  lugartrabajo:"R6-07 dir prov Same 107", situacionrevista:"Planta permanente M.Salud",
-  categoria:1, udopresup:"6-07", fechanacimiento:"05/12/1996", sexo:'M'},
-
+const ELEMENT_DATA: Legajos[] = [
+  { legajo:34360445, apellido:"Chauque", nombre:"Daniel", cuil:23343604459,
+  situacionrevista:"CONTRAT.SERVI.", udeo:"R6-07",
+  categoria:"3 (C-4)", lugartrabajo:"SAME CENTRAL", fechaingreso:"01/01/2014",
+   estado:"ACTIVO", funcion:"Operador", agrupamiento:"Operadores" },
+   { legajo:34360445, apellido:"Chauque", nombre:"Daniel", cuil:23343604459,
+   situacionrevista:"PLANTA PERMANENTE", udeo:"R6-07",
+   categoria:"3 (C-4)", lugartrabajo:"BASE HUMAHUACA", fechaingreso:"01/01/2005",
+    estado:"INACTIVO", funcion:"Operador", agrupamiento:"Operadores" },
+    { legajo:34360445, apellido:"Chauque", nombre:"Daniel", cuil:23343604459,
+    situacionrevista:"PLANTA PERMANENTE", udeo:"R6-07",
+    categoria:"3 (C-4)", lugartrabajo:"BASE HUMAHUACA", fechaingreso:"01/01/2005",
+     estado:"INACTIVO", funcion:"Operador", agrupamiento:"Operadores" },
+     { legajo:34360445, apellido:"Chauque", nombre:"Daniel", cuil:23343604459,
+     situacionrevista:"PLANTA PERMANENTE", udeo:"R6-07",
+     categoria:"3 (C-4)", lugartrabajo:"BASE HUMAHUACA", fechaingreso:"01/01/2005",
+      estado:"INACTIVO", funcion:"Operador", agrupamiento:"Operadores" },
+      { legajo:34360445, apellido:"Chauque", nombre:"Daniel", cuil:23343604459,
+      situacionrevista:"PLANTA PERMANENTE", udeo:"R6-07",
+      categoria:"3 (C-4)", lugartrabajo:"BASE HUMAHUACA", fechaingreso:"01/01/2005",
+       estado:"INACTIVO", funcion:"Operador", agrupamiento:"Operadores" },
+       { legajo:34360445, apellido:"Chauque", nombre:"Daniel", cuil:23343604459,
+       situacionrevista:"PLANTA PERMANENTE", udeo:"R6-07",
+       categoria:"3 (C-4)", lugartrabajo:"BASE HUMAHUACA", fechaingreso:"01/01/2005",
+        estado:"INACTIVO", funcion:"Operador", agrupamiento:"Operadores" },
+        { legajo:34360445, apellido:"Chauque", nombre:"Daniel", cuil:23343604459,
+        situacionrevista:"PLANTA PERMANENTE", udeo:"R6-07",
+        categoria:"3 (C-4)", lugartrabajo:"BASE HUMAHUACA", fechaingreso:"01/01/2005",
+         estado:"INACTIVO", funcion:"Operador", agrupamiento:"Operadores" },
+         { legajo:34360445, apellido:"Chauque", nombre:"Daniel", cuil:23343604459,
+         situacionrevista:"PLANTA PERMANENTE", udeo:"R6-07",
+         categoria:"3 (C-4)", lugartrabajo:"BASE HUMAHUACA", fechaingreso:"01/01/2005",
+          estado:"INACTIVO", funcion:"Operador", agrupamiento:"Operadores" },
+          { legajo:34360445, apellido:"Chauque", nombre:"Daniel", cuil:23343604459,
+          situacionrevista:"PLANTA PERMANENTE", udeo:"R6-07",
+          categoria:"3 (C-4)", lugartrabajo:"BASE HUMAHUACA", fechaingreso:"01/01/2005",
+           estado:"INACTIVO", funcion:"Operador", agrupamiento:"Operadores" },
+           { legajo:34360445, apellido:"Chauque", nombre:"Daniel", cuil:23343604459,
+           situacionrevista:"PLANTA PERMANENTE", udeo:"R6-07",
+           categoria:"3 (C-4)", lugartrabajo:"BASE HUMAHUACA", fechaingreso:"01/01/2005",
+            estado:"INACTIVO", funcion:"Operador", agrupamiento:"Operadores" },
 ];

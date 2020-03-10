@@ -89,39 +89,39 @@
         <table mat-table [dataSource]="dataSource">
 
           <!-- Legajo Column -->
-          <ng-container matColumnDef="legajo">
+          <ng-container matColumnDef="legajo" sticky>
             <th mat-header-cell *matHeaderCellDef> Legajo </th>
             <td mat-cell *matCellDef="let element"> {{element.legajo}} </td>
           </ng-container>
 
           <!-- NombreCOmpleto Column -->
-          <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef> Nombre completo </th>
-            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          <ng-container matColumnDef="apellido">
+            <th mat-header-cell *matHeaderCellDef> Apellido </th>
+            <td mat-cell *matCellDef="let element"> {{element.apellido}} </td>
           </ng-container>
 
           <!-- Documento Column -->
-          <ng-container matColumnDef="documento">
-            <th mat-header-cell *matHeaderCellDef> Documento </th>
-            <td mat-cell *matCellDef="let element"> {{element.documento}} </td>
+          <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef> Nombre </th>
+            <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
           </ng-container>
 
           <!-- Entidad Salud Column -->
-          <ng-container matColumnDef="entidadsalud">
-            <th mat-header-cell *matHeaderCellDef> Entidad Salud </th>
-            <td mat-cell *matCellDef="let element"> {{element.entidadsalud}} </td>
+          <ng-container matColumnDef="cuil">
+            <th mat-header-cell *matHeaderCellDef> Cuil </th>
+            <td mat-cell *matCellDef="let element"> {{element.cuil}} </td>
           </ng-container>
 
           <!-- LugarDeTrabajo Salud Column -->
-          <ng-container matColumnDef="lugartrabajo">
-            <th mat-header-cell *matHeaderCellDef> Lugar de Trabajo </th>
-            <td mat-cell *matCellDef="let element"> {{element.lugartrabajo}} </td>
+          <ng-container matColumnDef="situacionrevista">
+            <th mat-header-cell *matHeaderCellDef> Sit Revista </th>
+            <td mat-cell *matCellDef="let element"> {{element.situacionrevista}} </td>
           </ng-container>
 
           <!-- SituacionRevista Salud Column -->
-          <ng-container matColumnDef="situacionrevista">
-            <th mat-header-cell *matHeaderCellDef> Situacion Revista </th>
-            <td mat-cell *matCellDef="let element"> {{element.situacionrevista}} </td>
+          <ng-container matColumnDef="udeo">
+            <th mat-header-cell *matHeaderCellDef> UDEO </th>
+            <td mat-cell *matCellDef="let element"> {{element.udeo}} </td>
           </ng-container>
 
           <!-- Categoria Salud Column -->
@@ -131,21 +131,33 @@
           </ng-container>
 
           <!-- UdoPresup Salud Column -->
-          <ng-container matColumnDef="udopresup">
-            <th mat-header-cell *matHeaderCellDef> Udo Presup </th>
-            <td mat-cell *matCellDef="let element"> {{element.udopresup}} </td>
+          <ng-container matColumnDef="lugartrabajo">
+            <th mat-header-cell *matHeaderCellDef> L. de trabajo </th>
+            <td mat-cell *matCellDef="let element"> {{element.lugartrabajo}} </td>
           </ng-container>
 
           <!-- Fecha Nacimiento Salud Column -->
-          <ng-container matColumnDef="fechanacimiento">
-            <th mat-header-cell *matHeaderCellDef> Fecha Nacimiento </th>
-            <td mat-cell *matCellDef="let element"> {{element.fechanacimiento}} </td>
+          <ng-container matColumnDef="fechaingreso">
+            <th mat-header-cell *matHeaderCellDef> Fecha de Ingreso </th>
+            <td mat-cell *matCellDef="let element"> {{element.fechaingreso}} </td>
           </ng-container>
 
           <!-- Sexo Salud Column -->
-          <ng-container matColumnDef="sexo">
-            <th mat-header-cell *matHeaderCellDef> Sexo </th>
-            <td mat-cell *matCellDef="let element"> {{element.sexo}} </td>
+          <ng-container matColumnDef="estado">
+            <th mat-header-cell *matHeaderCellDef> Estado </th>
+            <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
+          </ng-container>
+
+          <!-- Sexo Salud Column -->
+          <ng-container matColumnDef="funcion">
+            <th mat-header-cell *matHeaderCellDef> Funcion </th>
+            <td mat-cell *matCellDef="let element"> {{element.funcion}} </td>
+          </ng-container>
+
+          <!-- Sexo Salud Column -->
+          <ng-container matColumnDef="agrupamiento">
+            <th mat-header-cell *matHeaderCellDef> Agrupamiento </th>
+            <td mat-cell *matCellDef="let element"> {{element.agrupamiento}} </td>
           </ng-container>
 
           <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>

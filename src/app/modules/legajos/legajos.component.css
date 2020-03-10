@@ -1,6 +1,6 @@
 .example-container {
-  height: 400px;
-  width: 1250px;
+  height: 500px;
+  width: 1200px;
   overflow: auto;
 }
 
@@ -10,7 +10,7 @@ table {
 
 td.mat-column-star {
   width: 20px;
-  padding-right: 8px;
+  padding-right: 15px;
 }
 
 th.mat-column-position, td.mat-column-position {
