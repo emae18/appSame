@@ -15,6 +15,7 @@ import { LoginComponent } from './modules/login/login.component';
 import { MainComponent } from './modules/main/main.component';
 import { LegajosComponent } from './modules/legajos/legajos.component';
 import { LegajosDosComponent } from './modules/legajos-dos/legajos-dos.component';
+import { DatosPersonalesComponent } from './modules/datos-personales/datos-personales.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LegajosDosComponent } from './modules/legajos-dos/legajos-dos.component
     LoginComponent,
     MainComponent,
     LegajosComponent,
-    LegajosDosComponent
+    LegajosDosComponent,
+    DatosPersonalesComponent
   ],
   imports: [
     BrowserModule,

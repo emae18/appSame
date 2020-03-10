@@ -1,0 +1,327 @@
+<div style="height: auto;">
+    <div style="margin-top: 2.5%;" fxLayout="row"
+    fxLayout.xs="column" fxLayoutGap.xs="1px" fxLayoutAlign="start center" fxLayoutGap="11px">
+        <mat-label>
+          Datos Personales
+        </mat-label>
+        <mat-form-field fxFlexOffset="5" appearance="outline">
+            <mat-label>
+                UDEO
+            </mat-label>
+            <input matInput placeholder="udeo">
+        </mat-form-field>
+        <mat-form-field  appearance="outline">
+          <mat-label>
+              Estado Civil
+          </mat-label>
+            <input
+                placeholder="Estado Civil"
+                aria-label="Number"
+                matInput
+                [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete" >
+            <mat-option *ngFor="let option of options" [value]="option">
+                {{option}}
+            </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </div>
+
+    <div style="margin-top: 2.5%;" fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap.xs="1px" fxLayoutAlign="center center" fxLayoutGap="11px">
+        <form style="display: inline-block;" fxLayout="row wrap"
+        fxLayout.xs="column" fxFlex="90"
+         fxLayoutGap="25px">
+            <mat-form-field fxFlex="20" appearance="outline">
+                <mat-label>
+                    Legajo
+                </mat-label>
+                <input matInput placeholder="N° Legajo" >
+            </mat-form-field>
+            <mat-form-field fxFlex="25" appearance="outline">
+                <mat-label>
+                    Apellido
+                </mat-label>
+                <input matInput placeholder="Apellido" >
+            </mat-form-field>
+            <mat-form-field fxFlex="25" appearance="outline">
+                <mat-label>
+                    Nombre
+                </mat-label>
+                <input matInput placeholder="Nombre" >
+            </mat-form-field>
+            <mat-form-field fxFlex="25" appearance="outline">
+                <mat-label>Fecha de Nacimiento</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field fxFlex="25" appearance="outline">
+                <mat-label>
+                    Nacionalidad
+                </mat-label>
+                <input matInput placeholder="Apellido" >
+            </mat-form-field>
+        </form>
+      </div>
+<hr style="width: 90%;" >
+    <!-- Buttons
+    <div style="margin-top: 2.5%;"  fxLayout="row" fxLayout.xs="column"
+     fxLayoutGap.xs="1px" fxLayoutAlign="center center" fxLayoutGap="11px">
+
+      <div fxFlex="35" fxLayout="row" fxLayout.sm="column" fxLayoutAlign="center center"
+      fxLayout.xs="column" fxLayoutGap="25px">
+        <button mat-raised-button color="accent">Agregar Nuevo</button>
+        <button mat-raised-button color="warn">Imprimir xls</button>
+        <button mat-raised-button color="warn">Imprimir pdf</button>
+      </div>
+    </div> -->
+
+    <div style="margin-top: 2.5%;" fxLayout="row"
+    fxLayout.xs="column" fxLayoutGap.xs="1px" fxLayoutAlign="start center" fxLayoutGap="11px">
+        <mat-label>
+          Datos Laborales
+        </mat-label>
+        <mat-form-field fxFlex="25" appearance="outline">
+            <mat-label>Fecha de Ingreso</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field  appearance="outline">
+          <mat-label>
+              Categoria
+          </mat-label>
+            <input
+                placeholder="Categoria"
+                aria-label="Number"
+                matInput
+                [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete" >
+            <mat-option *ngFor="let option of options" [value]="option">
+                {{option}}
+            </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+        <mat-form-field  appearance="outline">
+          <mat-label>
+              Funcion
+          </mat-label>
+            <input
+                placeholder="Categoria"
+                aria-label="Number"
+                matInput
+                [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete" >
+            <mat-option *ngFor="let option of options" [value]="option">
+                {{option}}
+            </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+        <mat-form-field  appearance="outline">
+          <mat-label>
+              Situacion de revista
+          </mat-label>
+            <input
+                placeholder="Categoria"
+                aria-label="Number"
+                matInput
+                [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete" >
+            <mat-option *ngFor="let option of options" [value]="option">
+                {{option}}
+            </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+        <mat-form-field  appearance="outline">
+          <mat-label>
+              Agrupamiento
+          </mat-label>
+            <input
+                placeholder="Categoria"
+                aria-label="Number"
+                matInput
+                [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete" >
+            <mat-option *ngFor="let option of options" [value]="option">
+                {{option}}
+            </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+        <mat-form-field  appearance="outline">
+          <mat-label>
+              Lugar de trabajo
+          </mat-label>
+            <input
+                placeholder="Categoria"
+                aria-label="Number"
+                matInput
+                [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete" >
+            <mat-option *ngFor="let option of options" [value]="option">
+                {{option}}
+            </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+        <mat-form-field  appearance="outline">
+          <mat-label>
+              Instrumento legal
+          </mat-label>
+            <input
+                placeholder="Categoria"
+                aria-label="Number"
+                matInput
+                [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete" >
+            <mat-option *ngFor="let option of options" [value]="option">
+                {{option}}
+            </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </div>
+
+    <hr style="width: 90%;" >
+    <div style="margin-top: 2.5%;" fxLayout="row"
+    fxLayout.xs="column" fxLayoutGap.xs="1px" fxLayoutAlign="start center" fxLayoutGap="11px">
+        <mat-label>
+          Datos Contacto
+        </mat-label>
+          <mat-form-field fxFlexOffset="5" appearance="outline">
+              <mat-label>
+                  Calle
+              </mat-label>
+              <input matInput placeholder="udeo">
+          </mat-form-field>
+          <mat-form-field fxFlexOffset="5" appearance="outline">
+              <mat-label>
+                  N°
+              </mat-label>
+              <input matInput placeholder="udeo">
+          </mat-form-field>
+          <mat-form-field fxFlexOffset="5" appearance="outline">
+              <mat-label>
+                  Piso
+              </mat-label>
+              <input matInput placeholder="udeo">
+          </mat-form-field>
+          <mat-form-field fxFlexOffset="5" appearance="outline">
+              <mat-label>
+                  Bario
+              </mat-label>
+              <input matInput placeholder="udeo">
+          </mat-form-field>
+          <mat-form-field fxFlexOffset="5" appearance="outline">
+              <mat-label>
+                  Telefono
+              </mat-label>
+              <input matInput placeholder="udeo">
+          </mat-form-field>
+          <mat-form-field fxFlexOffset="5" appearance="outline">
+              <mat-label>
+                  Email
+              </mat-label>
+              <input matInput placeholder="udeo">
+          </mat-form-field>
+      </div>
+
+      <hr style="width: 90%;" >
+      <h3 mat-subheader>Padre Madre Conyuge</h3>
+      <div style="margin-top: 2.5%;" fxLayout="row"
+      fxLayout.xs="column" fxLayoutGap.xs="1px" fxLayoutAlign="start center" fxLayoutGap="11px">
+      <mat-list>
+        <mat-list-item *ngFor="let familiar of familiares">
+          <mat-icon mat-list-icon>people</mat-icon>
+          <mat-label>{{familiar.tipo}}</mat-label>
+          <mat-form-field fxFlexOffset="5" appearance="outline">
+              <mat-label>
+                  Nombre
+              </mat-label>
+              <input matInput placeholder="udeo">
+          </mat-form-field>
+          <mat-form-field fxFlexOffset="5" appearance="outline">
+              <mat-label>
+                Apellido
+              </mat-label>
+              <input matInput placeholder="udeo">
+          </mat-form-field>
+          <mat-form-field fxFlexOffset="5" appearance="outline">
+              <mat-label>
+                  Cuil
+              </mat-label>
+              <input matInput placeholder="udeo">
+          </mat-form-field>
+          <mat-form-field fxFlex="25" appearance="outline">
+              <mat-label>Fecha de Nacimiento</mat-label>
+              <input matInput [matDatepicker]="picker">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field fxFlexOffset="5" appearance="outline">
+              <mat-label>
+                  Nacionalidad
+              </mat-label>
+              <input matInput placeholder="udeo">
+          </mat-form-field>
+          <form>
+            <span>Vive</span>
+            <mat-checkbox>Si</mat-checkbox>
+            <mat-checkbox>No</mat-checkbox>
+          </form>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </mat-list>
+      </div>
+
+      <hr style="width: 90%;" >
+      <h3 mat-subheader>Hijos</h3>
+      <button mat-raised-button color="warn" (click)="agregarHijo()">Agregar</button>
+      <div style="margin-top: 2.5%;" fxLayout="row"
+      fxLayout.xs="column" fxLayoutGap.xs="1px" fxLayoutAlign="start center" fxLayoutGap="11px">
+      <mat-list>
+        <mat-list-item *ngFor="let hijo of hijos">
+          <mat-icon mat-list-icon>people</mat-icon>
+          <mat-form-field fxFlexOffset="5" appearance="outline">
+              <mat-label>
+                  Nombre
+              </mat-label>
+              <input matInput placeholder="udeo">
+          </mat-form-field>
+          <mat-form-field fxFlexOffset="5" appearance="outline">
+              <mat-label>
+                Apellido
+              </mat-label>
+              <input matInput placeholder="udeo">
+          </mat-form-field>
+          <mat-form-field fxFlexOffset="5" appearance="outline">
+              <mat-label>
+                  Cuil
+              </mat-label>
+              <input matInput placeholder="udeo">
+          </mat-form-field>
+          <mat-form-field fxFlex="25" appearance="outline">
+              <mat-label>Fecha de Nacimiento</mat-label>
+              <input matInput [matDatepicker]="picker">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field fxFlexOffset="5" appearance="outline">
+              <mat-label>
+                  Edad
+              </mat-label>
+              <input matInput placeholder="udeo">
+          </mat-form-field>
+          <form fxflexoffset="5" style="display: inline-block;" fxLayout.xs="row" fxFlex="10" fxLayoutGap="5px">
+            <span  fxLayoutAlign="center center">Escolaridad</span>
+            <hr width="100%">
+            <mat-checkbox>Primaria</mat-checkbox>
+            <br>
+            <mat-checkbox>Secundaria</mat-checkbox>
+            <br>
+            <mat-checkbox>Terciario_unv</mat-checkbox>
+            <br>
+          </form>
+          <button mat-raised-button (click)="removeHijo(hijo)"color="warn">Eliminar</button>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </mat-list>
+      </div>
+</div>

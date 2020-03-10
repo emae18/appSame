@@ -12,7 +12,6 @@ export class LegajosComponent implements OnInit {
   help_tooltip:string;
   options: string[] = ['R6-07 dir prov Same 107', '...', '...'];
   operadores: string[] = ['Daniel', 'Emanuel', 'Andres'];
-  //displayedColumns = ['legajo', 'name', 'documento', 'entidadsalud', 'lugartrabajo', 'situacionrevista', 'categoria', 'udopresup', 'fechanacimiento', 'sexo'];
   displayedColumns = ['legajo', 'apellido', 'nombre', 'cuil',
    'situacionrevista', 'udeo', 'categoria', 'lugartrabajo',
    'fechaingreso', 'estado', 'funcion', 'agrupamiento'];
