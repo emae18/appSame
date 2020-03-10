@@ -14,6 +14,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { LoginComponent } from './modules/login/login.component';
 import { MainComponent } from './modules/main/main.component';
 import { LegajosComponent } from './modules/legajos/legajos.component';
+import { LegajosDosComponent } from './modules/legajos-dos/legajos-dos.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LegajosComponent } from './modules/legajos/legajos.component';
     FooterComponent,
     LoginComponent,
     MainComponent,
-    LegajosComponent
+    LegajosComponent,
+    LegajosDosComponent
   ],
   imports: [
     BrowserModule,

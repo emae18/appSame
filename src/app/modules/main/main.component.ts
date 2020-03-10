@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  cards = ['Personal', 'Novedades', 'Legajos', 'Sueldos', 'Asistencias'];
+  cards = ['LegajoUno', 'Novedades', 'Legajos', 'Sueldos', 'Asistencias'];
   constructor() { }
 
   ngOnInit(): void {

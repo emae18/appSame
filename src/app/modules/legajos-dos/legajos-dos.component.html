@@ -1,59 +1,74 @@
 
 <div style="height: auto;">
-    <div style="margin-top: 2.5%;" fxLayout="row" fxLayout.xs="column" fxLayoutGap.xs="1px" fxLayoutAlign="center center" fxLayoutGap="11px">
-        <mat-icon matTooltip="{{help_tooltip}}">
-            help
-        </mat-icon>
-        <mat-label  >
-            Buscar
-        </mat-label>
-        <form style="display: inline-block;" fxLayout.xs="column" fxFlex="80" fxLayoutGap="5px">
-            <mat-form-field fxFlex="80" appearance="outline">
-                <mat-label>
-                    Busqueda por Apellido, Nombre
-                </mat-label>
-                <input fxFlex    matInput placeholder="Apellido, Nombre, DNI, CUIL, N° Legajo" >
-                <mat-icon >
-                    search
-                </mat-icon>
-            </mat-form-field>
-            <mat-form-field fxFlex appearance="outline">
-                <mat-label>Desde</mat-label>
-                <input matInput [matDatepicker]="picker">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
-            <mat-form-field fxFlex appearance="outline">
-                <mat-label>Hasta</mat-label>
-                <input matInput [matDatepicker]="pickerEnd">
-                <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
-                <mat-datepicker #pickerEnd></mat-datepicker>
-            </mat-form-field>
-        </form>
+    <div style="margin-top: 2.5%;" fxLayout="row" 
+    fxLayout.xs="column" fxLayoutGap.xs="1px" fxLayoutAlign="start center" fxLayoutGap="11px">
+        <mat-form-field fxFlexOffset="5" appearance="outline">
+            <mat-label>
+                Busqueda por Repartición
+            </mat-label>
+            <input matInput placeholder="N° Legajo" >
+        </mat-form-field>
+        <mat-form-field  appearance="outline">
+            <input type="text"
+                placeholder="Ejercicio"
+                aria-label="Number"
+                matInput
+                [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete" >
+            <mat-option *ngFor="let option of options" [value]="option">
+                {{option}}
+            </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
     </div>
-
-    <!-- Body -->
-    <div style="margin-top: 2.5%;" fxLayout="row" fxLayout.xs="column"
-     fxLayoutGap.xs="1px" fxLayoutAlign="center center" fxLayoutGap="11px">
-      <form fxflexoffset="5" style="display: inline-block;" fxLayout.xs="column" fxFlex="10" fxLayoutGap="5px">
-        <span  fxLayoutAlign="center center">Legajo</span>
-        <hr width="100%">
-        <mat-checkbox >Todos</mat-checkbox>
-        <br>
-        <mat-checkbox>Activo</mat-checkbox>
-        <br>
-        <mat-checkbox>Inactivo</mat-checkbox>
-        <br>
-      </form>
-      <div fxFlex="35" fxLayout="row" fxLayout.sm="column" fxLayoutAlign="center center" 
-      fxLayout.xs="column" fxLayoutGap="25px">
-        <button mat-raised-button color="accent">Agregar Nuevo</button>
-        <button mat-raised-button color="warn">Imprimir xls</button>
-        <button mat-raised-button color="warn">Imprimir pdf</button>
-      </div>
-      
-      <form fxFlex="25" >
-              <mat-form-field style="width:100%;" appearance="outline">
+    <hr style="width: 90%;" >
+    <div style="margin-top: 2.5%;" fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap.xs="1px" fxLayoutAlign="center center" fxLayoutGap="11px">
+        <form style="display: inline-block;" fxLayout="row wrap" 
+        fxLayout.xs="column" fxFlex="90"
+         fxLayoutGap="25px">  
+            <mat-form-field fxFlex="20" appearance="outline">
+                <mat-label>
+                    Busqueda por Legajo
+                </mat-label>
+                <input matInput placeholder="N° Legajo" >
+            </mat-form-field>
+            <mat-form-field fxFlex="25" appearance="outline">
+                <mat-label>
+                    Busqueda por Apellido
+                </mat-label>
+                <input matInput placeholder="Apellido" >
+            </mat-form-field>
+            <mat-form-field fxFlex="25" appearance="outline">
+                <mat-label>
+                    Busqueda por Nombre
+                </mat-label>
+                <input matInput placeholder="Nombre" >
+            </mat-form-field>
+            <mat-form-field fxFlex="20" appearance="outline">
+                <input type="text"
+                       placeholder="Categoria"
+                       aria-label="Number"
+                       matInput
+                       [matAutocomplete]="auto">
+                <mat-autocomplete #auto="matAutocomplete" >
+                  <mat-option *ngFor="let option of options" [value]="option">
+                    {{option}}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+            <mat-form-field fxFlex="30" appearance="outline">
+                <input type="text"
+                       placeholder="Situación de Revista"
+                       aria-label="Number"
+                       matInput
+                       [matAutocomplete]="auto">
+                <mat-autocomplete #auto="matAutocomplete" >
+                  <mat-option *ngFor="let option of options" [value]="option">
+                    {{option}}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+              <mat-form-field fxFlex="35" appearance="outline">
                 <input type="text"
                        placeholder="Lugar de trabajo"
                        aria-label="Number"
@@ -65,9 +80,7 @@
                   </mat-option>
                 </mat-autocomplete>
               </mat-form-field>
-      </form>
-      <form fxFlex="25" >
-              <mat-form-field style="width:100%;" appearance="outline">
+              <mat-form-field fxFlex="25"  appearance="outline">
                 <input type="text"
                        placeholder="Operador de carga"
                        aria-label="Number"
@@ -79,7 +92,38 @@
                   </mat-option>
                 </mat-autocomplete>
               </mat-form-field>
-      </form>
+             
+            <mat-form-field fxFlex="25" appearance="outline">
+                <mat-label>Ingreso Desde</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field fxFlex="25" appearance="outline">
+                <mat-label>Ingreso Hasta</mat-label>
+                <input matInput [matDatepicker]="pickerEnd">
+                <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+                <mat-datepicker #pickerEnd></mat-datepicker>
+            </mat-form-field>
+            <button type="submit" fxFlexOffset="7" fxFlex="25" mat-flat-button color="accent">
+                 Buscar</button>
+        </form>
+
+       
+       
+    </div>
+
+    <!-- Body -->
+    <div style="margin-top: 2.5%;"  fxLayout="row" fxLayout.xs="column"
+     fxLayoutGap.xs="1px" fxLayoutAlign="center center" fxLayoutGap="11px">
+      
+      <div fxFlex="35" fxLayout="row" fxLayout.sm="column" fxLayoutAlign="center center" 
+      fxLayout.xs="column" fxLayoutGap="25px">
+        <button mat-raised-button color="accent">Agregar Nuevo</button>
+        <button mat-raised-button color="warn">Imprimir xls</button>
+        <button mat-raised-button color="warn">Imprimir pdf</button>
+      </div>
+      
     </div>
     <br>
 
