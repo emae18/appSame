@@ -1,5 +1,12 @@
 <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center center" style="height: 90%;">
-    <mat-card routerLink="{{card==='Legajos'?'/legajos':card==='LegajoUno'?'/legajosDos':'/login'}}" 
+    <!-- la sintax base es RouterLink="/ruta"
+    aquí hacermos bueno el if para ver cual selecciona y mandarla al componente
+    lo unico que cambia es el router-outlet en app.component.html 
+    puedes observar el control de las rutas en app-routing.module.ts -->
+    <mat-card 
+    routerLink="{{card==='Legajos'?'/legajos':
+    card==='LegajoUno'?'/legajosDos':
+    card==='Novedades'?'/novedades':'/login'}}" 
     routerLinkActive="active" fxFlex="25" fxLayoutAlign="center" style="margin-top: 3%;" 
     *ngFor="let card of cards" fxFlexOffset="10">
         <mat-card-header  >

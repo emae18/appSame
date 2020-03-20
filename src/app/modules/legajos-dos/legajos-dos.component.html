@@ -1,13 +1,39 @@
 <div style="height: auto;">
-    <div style="margin-top: 2.5%;" fxLayout="row"
-    fxLayout.xs="column" fxLayoutGap.xs="1px" fxLayoutAlign="start center" fxLayoutGap="11px">
-        <mat-form-field fxFlexOffset="5" appearance="outline">
+<!-- Bueno el height auto ni idea :v sólo para que ocupe toda la pantalla necesaria -->
+<!-- entonces fxLayout me dice la dirección del flujo del contenedor, en
+este caso un form... bueno se entiende row fila, column columna...
+entonces el flujo que seguiran los elemntos dentro del contenedor seran como lo dicho...
+le pongo el .xs para los dispositivos más pequeños
+esta md, lg, etc... bueno LayoutAlign es la forma en la que los elementos se van alineando
+dentro del contenedor puedes ver aquí: https://tburleson-layouts-demos.firebaseapp.com/#/docs
+fxLayoutGap, es el espaciado entre elementos dentro del contenedor...
+ -->
+    <form  style="margin-top: 2.5%;" 
+    fxLayout="row wrap" fxLayoutAlign="start center" 
+    fxLayoutGap="11px"
+    fxLayout.xs="row wrap" fxLayoutAlign.xs="space-evenly center" fxLayoutGap.xs="0" 
+    >
+      <mat-form-field *ngFor="let field of fields" fxFlexOffset="5" fxFlex.xs="47" appearance="outline">
+        <mat-label>
+          Busqueda por {{field | titlecase }}
+        </mat-label>
+      <input matInput placeholder="{{field}}" >
+    </mat-form-field>
+    </form>
+     <form style="margin-top: 2.5%;" 
+    fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="11px"
+    fxLayout.xs="row wrap" fxLayoutAlign.xs="space-evenly center" fxLayoutGap.xs="0" 
+    >
+    <!-- fxFlexOffset es el espacio que quiera este elemento solamente, misteriosamente o nose
+    porque el Gap no funciona con el primer elemento...
+     -->
+        <mat-form-field fxFlexOffset="5" fxFlex.xs="47" appearance="outline">
             <mat-label>
                 Busqueda por Repartición
             </mat-label>
             <input matInput placeholder="N° Legajo" >
         </mat-form-field>
-        <mat-form-field  appearance="outline">
+        <mat-form-field  appearance="outline"  fxFlex.xs="41">
             <input type="text"
                 placeholder="Ejercicio"
                 aria-label="Number"
@@ -19,31 +45,36 @@
             </mat-option>
             </mat-autocomplete>
         </mat-form-field>
-    </div>
-    <hr style="width: 90%;" >
-    <div style="margin-top: 2.5%;" fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap.xs="1px" fxLayoutAlign="center center" fxLayoutGap="11px">
-        <form style="display: inline-block;" fxLayout="row wrap"
-        fxLayout.xs="column" fxFlex="90"
-         fxLayoutGap="25px">
-            <mat-form-field fxFlex="20" appearance="outline">
+      <!-- </form> -->
+    <hr style="width: 95%;" >
+    <!-- wrap es que cuando lo elementos no caben en el contenedor, expande la altura si es una fila
+    y permite continue abajo en vez de superponerse o agrandar la pantalla xd -->
+    <!-- <form style="margin-top: 2.5%;" fxLayout="row wrap" fxLayout.xs="row wrap" 
+    fxLayoutGap.xs="1px" fxLayoutAlign="center center" fxLayoutAlign.xs="center center" 
+    fxLayoutGap="11px"> -->
+    <!-- FxFlex es el porentaje que quiero que ocupe mi elemnto en mi contenedor
+    ejemplo row sería como el 100% entonces si tengo 4 input le puedo poner fxFlex="25"
+    a cada uno y entran todos, osea en fila modifica su ancho, y en column su altura... -->
+            <mat-form-field fxFlexOffset="1" fxFlex="25" fxFlex.xs="81" appearance="outline">
                 <mat-label>
                     Busqueda por Legajo
                 </mat-label>
                 <input matInput placeholder="N° Legajo" >
             </mat-form-field>
-            <mat-form-field fxFlex="25" appearance="outline">
+            
+            <mat-form-field fxFlex="25" fxFlex.xs="47" appearance="outline">
                 <mat-label>
                     Busqueda por Apellido
                 </mat-label>
                 <input matInput placeholder="Apellido" >
             </mat-form-field>
-            <mat-form-field fxFlex="25" appearance="outline">
+            <mat-form-field fxFlex="25" fxFlex.xs="47" appearance="outline">
                 <mat-label>
                     Busqueda por Nombre
                 </mat-label>
                 <input matInput placeholder="Nombre" >
             </mat-form-field>
-            <mat-form-field fxFlex="20" appearance="outline">
+            <mat-form-field fxFlex="20" fxFlex.xs="47" appearance="outline">
                 <input type="text"
                        placeholder="Categoria"
                        aria-label="Number"
@@ -55,7 +86,7 @@
                   </mat-option>
                 </mat-autocomplete>
               </mat-form-field>
-            <mat-form-field fxFlex="30" appearance="outline">
+            <mat-form-field fxFlexOffset="1" fxFlex="30" fxFlex.xs="47" appearance="outline">
                 <input type="text"
                        placeholder="Situación de Revista"
                        aria-label="Number"
@@ -67,7 +98,7 @@
                   </mat-option>
                 </mat-autocomplete>
               </mat-form-field>
-              <mat-form-field fxFlex="35" appearance="outline">
+              <mat-form-field fxFlex="35"  fxFlex.xs="47" appearance="outline">
                 <input type="text"
                        placeholder="Lugar de trabajo"
                        aria-label="Number"
@@ -79,7 +110,7 @@
                   </mat-option>
                 </mat-autocomplete>
               </mat-form-field>
-              <mat-form-field fxFlex="25"  appearance="outline">
+              <mat-form-field fxFlex="25" fxFlex.xs="47" appearance="outline">
                 <input type="text"
                        placeholder="Operador de carga"
                        aria-label="Number"
@@ -92,42 +123,31 @@
                 </mat-autocomplete>
               </mat-form-field>
 
-            <mat-form-field fxFlex="25" appearance="outline">
-                <mat-label>Ingreso Desde</mat-label>
+            <mat-form-field fxFlexOffset.xs="0" fxFlexOffset="10" fxFlex="15" fxFlex.xs="47" appearance="outline">
+                <mat-label>Desde</mat-label>
                 <input matInput [matDatepicker]="picker">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
-            <mat-form-field fxFlex="25" appearance="outline">
-                <mat-label>Ingreso Hasta</mat-label>
+            <mat-form-field fxFlex="15" fxFlex.xs="47" appearance="outline">
+                <mat-label>  Hasta</mat-label>
                 <input matInput [matDatepicker]="pickerEnd">
                 <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
                 <mat-datepicker #pickerEnd></mat-datepicker>
             </mat-form-field>
-            <button type="submit" fxFlexOffset="7" fxFlex="25" mat-flat-button color="accent">
+            <button type="submit"  fxFlex="20" fxFlex.xs="81" mat-flat-button color="accent">
                  Buscar</button>
-        </form>
-
-
-
-    </div>
-
-    <!-- Body -->
-    <div style="margin-top: 2.5%;"  fxLayout="row" fxLayout.xs="column"
-     fxLayoutGap.xs="1px" fxLayoutAlign="center center" fxLayoutGap="11px">
-
-      <div fxFlex="35" fxLayout="row" fxLayout.sm="column" fxLayoutAlign="center center"
-      fxLayout.xs="column" fxLayoutGap="25px">
-        <button mat-raised-button color="accent">Agregar Nuevo</button>
-        <button mat-raised-button color="warn">Imprimir xls</button>
-        <button mat-raised-button color="warn">Imprimir pdf</button>
-      </div>
-
-    </div>
+                  <div fxLayout="row" fxLayoutAlign="center" fxFlexAlign.xs="center"
+                    fxLayout.xs="row wrap" fxLayoutGap="15px" fxLayoutGap.xs="3px"
+                    fxFlex >
+                      <button mat-raised-button fxFlex.xs="37" color="warn">Imprimir xls</button>
+                      <button mat-raised-button color="warn" fxFlex.xs="37"  >Imprimir pdf</button>
+                      <button mat-raised-button color="accent">Agregar Nuevo</button>
+                    </div>
+            </form>
     <br>
-
     <!-- Table -->
-      <div style="margin-top: 2.5%;   overflow-x: scroll;      "  class="mat-elevation-z8">
+    <div style="margin-top: 2.5%;   overflow-x: scroll;      "  class="mat-elevation-z8">
         <table style="width: 99%;" mat-table [dataSource]="dataSource">
 
           <!-- Legajo Column -->
@@ -205,5 +225,5 @@
           <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
-      </div>
+    </div>
 </div>

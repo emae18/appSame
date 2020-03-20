@@ -1,4 +1,4 @@
-export interface legajos{
+export interface Legajo{
   legajo:number;
   apellido:string;
   nombre:string;

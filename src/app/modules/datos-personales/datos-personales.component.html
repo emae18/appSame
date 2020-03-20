@@ -1,5 +1,5 @@
 <div style="height: auto;">
-    <div style="margin-top: 2.5%;" fxLayout="row"
+    <div style="margin-top: 2.5%;" fxLayout="row wrap"
     fxLayout.xs="column" fxLayoutGap.xs="1px" fxLayoutAlign="start center" fxLayoutGap="11px">
         <mat-label>
           Datos Personales
@@ -27,9 +27,8 @@
         </mat-form-field>
     </div>
 
-    <div style="margin-top: 2.5%;" fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap.xs="1px" fxLayoutAlign="center center" fxLayoutGap="11px">
-        <form style="display: inline-block;" fxLayout="row wrap"
-        fxLayout.xs="column" fxFlex="90"
+        <form   style="margin-top: 2.5%;"  fxLayout="row wrap"
+        fxLayout.xs="column" 
          fxLayoutGap="25px">
             <mat-form-field fxFlex="20" appearance="outline">
                 <mat-label>
@@ -62,7 +61,6 @@
                 <input matInput placeholder="Apellido" >
             </mat-form-field>
         </form>
-      </div>
 <hr style="width: 90%;" >
     <!-- Buttons
     <div style="margin-top: 2.5%;"  fxLayout="row" fxLayout.xs="column"
@@ -76,7 +74,7 @@
       </div>
     </div> -->
 
-    <div style="margin-top: 2.5%;" fxLayout="row"
+    <div style="margin-top: 2.5%;" fxLayout="row wrap"
     fxLayout.xs="column" fxLayoutGap.xs="1px" fxLayoutAlign="start center" fxLayoutGap="11px">
         <mat-label>
           Datos Laborales
@@ -180,7 +178,7 @@
     </div>
 
     <hr style="width: 90%;" >
-    <div style="margin-top: 2.5%;" fxLayout="row"
+    <div style="margin-top: 2.5%;" fxLayout="row wrap"
     fxLayout.xs="column" fxLayoutGap.xs="1px" fxLayoutAlign="start center" fxLayoutGap="11px">
         <mat-label>
           Datos Contacto
@@ -225,37 +223,37 @@
 
       <hr style="width: 90%;" >
       <h3 mat-subheader>Padre Madre Conyuge</h3>
-      <div style="margin-top: 2.5%;" fxLayout="row"
+      <div style="margin-top: 2.5%;" fxLayout="row wrap"
       fxLayout.xs="column" fxLayoutGap.xs="1px" fxLayoutAlign="start center" fxLayoutGap="11px">
       <mat-list>
         <mat-list-item *ngFor="let familiar of familiares">
           <mat-icon mat-list-icon>people</mat-icon>
           <mat-label>{{familiar.tipo}}</mat-label>
-          <mat-form-field fxFlexOffset="5" appearance="outline">
+          <mat-form-field  appearance="outline">
               <mat-label>
                   Nombre
               </mat-label>
               <input matInput placeholder="udeo">
           </mat-form-field>
-          <mat-form-field fxFlexOffset="5" appearance="outline">
+          <mat-form-field  appearance="outline">
               <mat-label>
                 Apellido
               </mat-label>
               <input matInput placeholder="udeo">
           </mat-form-field>
-          <mat-form-field fxFlexOffset="5" appearance="outline">
+          <mat-form-field  appearance="outline">
               <mat-label>
                   Cuil
               </mat-label>
               <input matInput placeholder="udeo">
           </mat-form-field>
-          <mat-form-field fxFlex="25" appearance="outline">
+          <mat-form-field appearance="outline">
               <mat-label>Fecha de Nacimiento</mat-label>
               <input matInput [matDatepicker]="picker">
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
-          <mat-form-field fxFlexOffset="5" appearance="outline">
+          <mat-form-field  appearance="outline">
               <mat-label>
                   Nacionalidad
               </mat-label>
@@ -274,42 +272,42 @@
       <hr style="width: 90%;" >
       <h3 mat-subheader>Hijos</h3>
       <button mat-raised-button color="warn" (click)="agregarHijo()">Agregar</button>
-      <div style="margin-top: 2.5%;" fxLayout="row"
+      <div style="margin-top: 2.5%;" fxLayout="row wrap"
       fxLayout.xs="column" fxLayoutGap.xs="1px" fxLayoutAlign="start center" fxLayoutGap="11px">
       <mat-list>
         <mat-list-item *ngFor="let hijo of hijos">
           <mat-icon mat-list-icon>people</mat-icon>
-          <mat-form-field fxFlexOffset="5" appearance="outline">
+          <mat-form-field  appearance="outline">
               <mat-label>
                   Nombre
               </mat-label>
               <input matInput placeholder="udeo">
           </mat-form-field>
-          <mat-form-field fxFlexOffset="5" appearance="outline">
+          <mat-form-field appearance="outline">
               <mat-label>
                 Apellido
               </mat-label>
               <input matInput placeholder="udeo">
           </mat-form-field>
-          <mat-form-field fxFlexOffset="5" appearance="outline">
+          <mat-form-field  appearance="outline">
               <mat-label>
                   Cuil
               </mat-label>
               <input matInput placeholder="udeo">
           </mat-form-field>
-          <mat-form-field fxFlex="25" appearance="outline">
+          <mat-form-field  appearance="outline">
               <mat-label>Fecha de Nacimiento</mat-label>
               <input matInput [matDatepicker]="picker">
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
-          <mat-form-field fxFlexOffset="5" appearance="outline">
+          <mat-form-field  appearance="outline">
               <mat-label>
                   Edad
               </mat-label>
               <input matInput placeholder="udeo">
           </mat-form-field>
-          <form fxflexoffset="5" style="display: inline-block;" fxLayout.xs="row" fxFlex="10" fxLayoutGap="5px">
+          <form fxLayout.xs="row wrap" fxFlex="10" fxLayoutGap="5px">
             <span  fxLayoutAlign="center center">Escolaridad</span>
             <hr width="100%">
             <mat-checkbox>Primaria</mat-checkbox>
